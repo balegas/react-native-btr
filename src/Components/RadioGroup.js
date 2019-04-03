@@ -17,7 +17,11 @@ class RadioGroup extends Component {
     this.setState({ radioButtons });
     this.props.onPress(this.state.radioButtons)
   };
-
+  
+  componentWillReceiveProps(nextProps) {
+      this.setState({radioButtons : nextProps.radioButtons});
+  }
+  
   render() {
     const { color, labelStyle, style } = this.props;
     let horizontal = false;
